@@ -1,0 +1,58 @@
+$ sudo docker pull devopsdockeruh/simple-web-service:ubuntu
+
+$ sudo docker pull devopsdockeruh/simple-web-service:alpine
+
+$ sudo docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+ubuntu                              latest    08d22c0ceb15   7 weeks ago   77.8MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+$ sudo docker run -d -it devopsdockeruh/simple-web-service:alpine
+
+$ sudo docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES
+e173270569b3   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   14 seconds ago   Up 13 seconds             gracious_kirch
+
+$ sudo docker exec -it gracious_kirch sh
+/usr/src/app # ls
+server    text.log
+/usr/src/app # cat text.log
+2023-05-02 07:52:34 +0000 UTC
+2023-05-02 07:52:36 +0000 UTC
+2023-05-02 07:52:38 +0000 UTC
+2023-05-02 07:52:40 +0000 UTC
+2023-05-02 07:52:42 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:52:44 +0000 UTC
+2023-05-02 07:52:46 +0000 UTC
+2023-05-02 07:52:48 +0000 UTC
+2023-05-02 07:52:50 +0000 UTC
+2023-05-02 07:52:52 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:52:54 +0000 UTC
+2023-05-02 07:52:56 +0000 UTC
+2023-05-02 07:52:58 +0000 UTC
+2023-05-02 07:53:00 +0000 UTC
+2023-05-02 07:53:02 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:53:04 +0000 UTC
+2023-05-02 07:53:06 +0000 UTC
+2023-05-02 07:53:08 +0000 UTC
+2023-05-02 07:53:10 +0000 UTC
+2023-05-02 07:53:12 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:53:14 +0000 UTC
+2023-05-02 07:53:16 +0000 UTC
+2023-05-02 07:53:18 +0000 UTC
+2023-05-02 07:53:20 +0000 UTC
+2023-05-02 07:53:22 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:53:24 +0000 UTC
+2023-05-02 07:53:26 +0000 UTC
+2023-05-02 07:53:28 +0000 UTC
+2023-05-02 07:53:30 +0000 UTC
+2023-05-02 07:53:32 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-02 07:53:34 +0000 UTC
+/usr/src/app # exit
