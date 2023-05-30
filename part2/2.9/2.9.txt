@@ -1,0 +1,8 @@
+- Removed REACT_APP_BACKEND_URL=http://localhost:8080 from frontend Dockerfile.
+- Added REQUEST_ORIGIN=http://frontend to backend on docker-compose.yml.
+- Removed ENV REQUEST_ORIGIN=http://localhost:5000 from backend Dockerfile.
+- Removed EXPOSE 5000 from frontend Dockerfile.
+- Removed EXPOSE 8080 from backend Dockerfile.
+- Removed specified ports from compose file for frontend and backend.
+
+Struggled with setup for a while and then ran it with " $ sudo docker compose build " to rebuild the images with the altered Dockerfiles.
