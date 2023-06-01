@@ -1,0 +1,1 @@
+Image size reduction: 447mb -> 18mb.
