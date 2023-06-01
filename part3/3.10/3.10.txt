@@ -1,0 +1,34 @@
+I chose to improve Monopoly card generator's image size and security. 
+Before the improvements, the Dockerfile uses default python image and uses root user. The size of the image is 911MB.
+
+After migrating to alpine version of python, the size has decreased to 49.8MB. Also, the root user is no longer running the app, rather a newly created one.
+I had to change the file permissions after user change.
+
+Dockerfile before (size 911mb):
+
+FROM python:3.10
+
+WORKDIR /app
+
+COPY . .
+
+CMD python3 generator.py
+
+Dockerfile After (size 49.8mb):
+
+FROM python:3.10-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN chmod 777 generator.py && \
+    chmod 744 community_chest.csv && \
+    chmod 744 chance.csv && \
+    adduser -D appuser && \
+    chown appuser . 
+
+USER appuser
+
+CMD python3 generator.py
+
