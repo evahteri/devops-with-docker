@@ -1,0 +1,1 @@
+Size decrease by using multi-stage build: 469MB -> 129MB
