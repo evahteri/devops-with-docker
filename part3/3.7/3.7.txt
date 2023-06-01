@@ -1,0 +1,5 @@
+The size of the frontend image before optimization: 1.26GB
+
+The size of the backend image before optimization: 447mb
+
+After migrating to Alpine: Frontend size 469MB, Backend size 447mb (already used Alpine)
